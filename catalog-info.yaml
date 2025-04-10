@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: mgmul34tb-nodejs-gitops
+  description: This is GitOps manifest for mgmul34tb-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=mgmul34tb-nodejs
+    backstage.io/kubernetes-id: mgmul34tb-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: mgmul34tb-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:mgmul34tb-nodejs
